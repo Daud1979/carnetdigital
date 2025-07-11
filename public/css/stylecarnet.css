@@ -3,17 +3,18 @@
     padding: 0;
 }
 body{
-    background: #eeeded; 
+  background: #eeeded; 
   justify-content: center; /* Horizontal */
   align-items: center;     /* Vertical */
- text-align: center;
-padding: 0.3rem;
+  text-align: center;
+  padding: 0.3rem;
 }
 .carnet-wrapper {
   width: 390px;
   height: 252px;
   perspective: 1000px;
   margin: 30px auto;
+  
 }
 
 .carnet-flip {
@@ -31,7 +32,7 @@ padding: 0.3rem;
   transform: rotateY(180deg);
 }
 
-.carnet-face {
+.carnet-face {/*este es el contenido*/
   position: absolute;
   width: 100%;
   height: 100%;
@@ -63,10 +64,11 @@ background-size: cover;         /* Hace que la imagen llene el div sin deformars
   background-position: center;    /* Centra la imagen */
   background-repeat: no-repeat;   /* Evita que se repita */
 }
+
 img{
-    width: 80px;   
-     
+    width: 80px;        
 }
+
 .carnet-content h3 {
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
@@ -78,8 +80,8 @@ img{
   margin: 5px 0;
   font-size: 1rem;
 }
-.listaCarnet
-{
+
+.listaCarnet{
   display: flex;
       flex-direction: column;
       width: 200px; /* Puedes ajustarlo según necesites */
@@ -87,31 +89,34 @@ img{
   text-align: start;
  
 }
-  .tabs {
-      display: flex;
-      margin-bottom: 10px;
-    }
 
-    .tab {
+.tabs {
+      display: flex;
+      margin-bottom: 5px;
+}
+
+.tab {
       padding: 10px 20px;
       cursor: pointer;
       background-color: #eee;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       border-bottom: none;
       margin-right: 5px;
       border-radius: 5px 5px 0 0;
-    }
+}
 
-    .tab.active {
+.tab.active {
       background-color: white;
       border-bottom: 1px solid white;
       font-weight: bold;
-    }
+}
 
-    .tab-content {
-      border-top: 1px solid #ccc;    
-      padding: 15px;             
-    }
+.tab-content {
+  border-top: 1px solid #ccc;    
+  padding: 15px;     
+  background: white;      
+  height: 100vh;  
+}
     .tab-pane {
       display: none;
     }
@@ -126,15 +131,13 @@ img{
   body{
     padding: 0;
   }
-  .tab-content {
-    padding: 0;    
+  .carnet-wrapper{
+    transform: rotate(-90deg); 
+    width: 400px;
+    height: 273px;
+    perspective: 1000px;
+    margin-left: -40px;
+   margin-top: 90px;
   }
- .tab-content a{
-  padding-left: 1rem;
- }
- .carnet-wrapper {
-  width: 350px;
-  height: 232px;
   
-}
 }
