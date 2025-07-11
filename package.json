@@ -1,0 +1,18 @@
+{
+  "name": "carnet-digital",
+  "version": "1.0.0",
+  "description": "Proyecto carnet con Node.js, MVC y SQL Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "hammerjs": "^2.0.8",
+    "mssql": "^9.0.1"
+  }
+}

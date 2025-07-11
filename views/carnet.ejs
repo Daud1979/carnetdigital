@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+<h3>GESTION DE CARNET Y CERTIFICADOS DEL ALUMNO</h3>   
+       <img src="/images/logo-originial.ico" alt="">
+     
+        
+<div class="tabs">
+    <div class="tab active" onclick="mostrarTab('carnet')">Carnet</div>
+    <div class="tab" onclick="mostrarTab('certificados')">Certificados</div>
+  </div>
+
+  <div class="tab-content">
+    <div id="carnet" class="tab-pane active">     
+           <div class="listaCarnet">
+            <a href="">Carretilla</a>
+            <a href="">Soldadura</a>
+            <a href="">Plataforma</a>
+          </div>
+          <div id="carnet-container" class="carnet-wrapper">
+            <div class="carnet-flip">
+              <div class="carnet-face carnet-front">
+                <div class="carnet-content">
+        
+                </div>
+              </div>
+              <div class="carnet-face carnet-back">
+                <div class="carnet-content">
+       
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div id="certificados" class="tab-pane">
+      <h3>Mis Certificados</h3>
+      <p>Aquí puedes ver tus certificados obtenidos.</p>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>
