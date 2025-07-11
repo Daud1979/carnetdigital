@@ -51,8 +51,7 @@ body{
 .carnet-front {
   z-index: 2;
   background-image: url('../images/anversoUNE.png');
-background-size: cover;         /* Hace que la imagen llene el div sin deformarse */
-background-size: cover;         /* Hace que la imagen llene el div sin deformarse */
+  background-size: cover;         /* Hace que la imagen llene el div sin deformarse */
   background-position: center;    /* Centra la imagen */
   background-repeat: no-repeat;   /* Evita que se repita */
 }
@@ -133,11 +132,18 @@ img{
   }
   .carnet-wrapper{
     transform: rotate(-90deg); 
-    width: 400px;
-    height: 273px;
+    width: 410px;
+  height: 272px;
     perspective: 1000px;
-    margin-left: -40px;
+    margin-left: -35px;
    margin-top: 90px;
+ 
   }
-  
+  .carnet-front {
+  z-index: 2;
+  background-image: url('../images/anversoUNE.png');
+  background-size:contain;         /* Hace que la imagen llene el div sin deformarse */
+  background-position: center;    /* Centra la imagen */
+  background-repeat: no-repeat;   /* Evita que se repita */
+}
 }
