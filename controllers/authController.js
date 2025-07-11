@@ -11,15 +11,14 @@ exports.login = async (req, res) => {
     return res.render('login', { error: 'Todos los campos son obligatorios.' });
   }
 
-  const user = await getUserByCredentials(email, dni, birthdate);
-
+  const user = await getUserByCredentials(email, dni, birthdate); 
   if (user) {
     req.session.user = {
       id: user.id,
       email: user.email,
       dni: user.dni,
-    };
-    res.redirect('/carnet');
+    };   
+    res.render('carnet',{datos:user});
   } else {
     res.render('login', { error: 'Credenciales incorrectas.' });
   }

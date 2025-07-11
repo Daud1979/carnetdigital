@@ -17,21 +17,24 @@
         <h2 class="text-center">Iniciar Sesión</h2>
         <p>Introduzca los siguientes datos para acceder</p>
       </div>
-    <form method="POST" action="/login">
+    <form method="POST" action="/credenciales">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="mb-3">
         <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@email.com" value="prueba@email.com" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@email.com" value="robertsaulpinar@hotmail.com" required>
       </div>
       <div class="mb-3">
         <label for="dni" class="form-label">DNI</label>
-        <input type="text" class="form-control" id="dni" name="dni" required placeholder="00000000A" value="12345678">
+        <input type="text" class="form-control" id="dni" name="dni" required placeholder="00000000A" value="Z2173516K">
       </div>
       <div class="mb-3">
         <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" id="birthdate" name="birthdate" required value="2000-01-01">
+        <input type="date" class="form-control" id="birthdate" name="birthdate" required value="2000-03-26">
     </div>
     <button type="submit" class="btn w-100" id="btnIngresar">Ingresar</button>
+    <% if (error) { %>
+  <label style="color: red;"><%= error %></label>
+<% } %>
   </form>
   
 </div>

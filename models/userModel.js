@@ -1,39 +1,18 @@
-// const sql = require('../config/db');
-
-// const getUserByCredentials = async (email, dni, birthdate) => {
-//   try {
-//     const result = await sql.query`
-//       SELECT * FROM Users
-//       WHERE email = ${email}
-//       AND dni = ${dni}
-//       AND birthdate = ${birthdate}
-//     `;
-//     return result.recordset[0];
-//   } catch (error) {
-//     console.error('Error al buscar usuario:', error);
-//     return null;
-//   }
-// };
-
-// module.exports = { getUserByCredentials };
-
-// Simulamos una base de datos con usuarios en memoria
-const users = [
-  {
-    id: 1,
-    email: 'prueba@email.com',
-    dni: '12345678',
-    birthdate: '2000-01-01',
-  },
-  // Puedes agregar más usuarios aquí
-];
+const sql = require('../config/db');
 
 const getUserByCredentials = async (email, dni, birthdate) => {
-  return users.find(u => 
-    u.email === email && 
-    u.dni === dni && 
-    u.birthdate === birthdate
-  ) || null;
+  try {
+    const result = await sql.query`
+      select id=ma.NumIdMatricula,nombre=tg.strDescripcion 
+      from Alumnos al inner join Matriculas ma on (al.numIdAlumno=ma.numIdAlumno) inner join matriculagrupos magru on (ma.numIdMatricula=magru.numIdMatricula) inner join grupos gru on (magru.numIdGrupo=gru.numIdGrupo)  inner join tiposgrupos tg on (gru.numIdTipoGrupo=tg.numIdTipoGrupo) 
+      where tg.numIdTipoGrupo <>1 and tg.numIdTipoGrupo<> 39 and al.strNif <> '' and al.strNif=ltrim(rtrim(${dni})) and convert(varchar(10),fecFechaNacimiento,103)=convert(varchar(10),convert(date,${birthdate}),103) and strEmail=ltrim(rtrim(${email}))
+    `;
+    return result.recordset;
+  } catch (error) {
+    console.error('Error al buscar usuario:', error);
+    return null;
+  }
 };
 
 module.exports = { getUserByCredentials };
+

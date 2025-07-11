@@ -1,28 +1,51 @@
 <%- include('partials/header') %>
 <h3>GESTION DE CARNET Y CERTIFICADOS DEL ALUMNO</h3>   
-       <img src="/images/logo-originial.ico" alt="">
-     
-        
+       <img src="/images/logo-originial.ico" alt="">    
+      
 <div class="tabs">
     <div class="tab active" onclick="mostrarTab('carnet')">Carnet</div>
     <div class="tab" onclick="mostrarTab('certificados')">Certificados</div>
-  </div>
-
-  <div class="tab-content">
-    <div id="carnet" class="tab-pane active">     
-   
-           <div class="listaCarnet">
-            <h3>Carnet</h3>
-            <a href="">Carretilla</a>
-            <a href="">Soldadura</a>
-            <a href="">Plataforma</a>
-            <a href="">Plataforma</a>
-          </div>
+</div>
+<div class="tab-content">
+  <div id="carnet" class="tab-pane active">     
+    <div class="listaCarnet w-100">
+      <h3>Mis Carnets</h3>
+      <ul>
+        <% datos.forEach(item => { %>
+        <li>
+            <a href="#" class="btnCarnet" data-id="<%= item.id %>"><%= item.nombre %></a>
+        </li>
+        <% }) %>
+      </ul>          
+    </div>
           <div id="carnet-container" class="carnet-wrapper">
             <div class="carnet-flip">
               <div class="carnet-face carnet-front">
                 <div class="carnet-content">
-        
+                    <div class="titulo ">
+                       <h6>CARNET DE CARRETILLA</h6>
+                    </div>
+                    <div class="contenedorcarnet">
+                      <div class="contenedorimg">
+                        
+                        <img id="imgfoto" src="/images/daud.png" alt="">
+                        <label class="labeltitulo" >Nº Registro</label>
+                        <label class="labeltitulo" >123456</label>
+                      </div>
+                      <div class="contenedordatos ">
+                          <div class="contenidotexto "> 
+                            <label class="labeltituloN" >Nombre</label>
+                          </div>
+                          <div class="contenidotexto ">
+                            <label class="labeltituloN" >Apellidos</label>
+                          </div>
+                          <div class="contenidotexto ">
+                            <label class="labeltituloN" >DNI</label>
+                          </div>
+                          <div class="contenidotexto "> <label class="labeltituloF" >Fecha expedición</label>&nbsp;&nbsp;<label class="labeltituloF" >Valido hasta*</label></div>
+                          <div class="contenidotexto "> <label class="labeltitulo" >05/05/2025</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label class="labeltitulo" >05/05/2025</label></div>
+                      </div>
+                    </div>
                 </div>
               </div>
               <div class="carnet-face carnet-back">
@@ -35,8 +58,16 @@
     </div>
 
     <div id="certificados" class="tab-pane">
+          <div class="listaCarnet w-100">
       <h3>Mis Certificados</h3>
-      <p>Aquí puedes ver tus certificados obtenidos.</p>
+      <ul>
+        <% datos.forEach(item => { %>
+        <li>
+            <a href="#" class="btnCertificado" data-id="<%= item.id %>"><%= item.nombre %></a>
+        </li>
+        <% }) %>
+      </ul>          
+    </div>
     </div>
   </div>
 

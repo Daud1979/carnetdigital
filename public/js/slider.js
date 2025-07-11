@@ -13,3 +13,23 @@ carnetFlip.addEventListener('click', () => {
       // Activar la pestaña correspondiente
       event.target.classList.add('active');
     }
+
+      // Espera que el DOM esté listo
+  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (e) {
+      const carnet = e.target.closest('.btnCarnet');
+      const certificado = e.target.closest('.btnCertificado');
+
+      if (carnet) {
+        e.preventDefault();
+        const id = carnet.dataset.id;       
+     
+      }
+
+      if (certificado) {
+        e.preventDefault();
+        const id = certificado.dataset.id;       
+     
+      }
+    });
+  });
