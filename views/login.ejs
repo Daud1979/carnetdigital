@@ -21,15 +21,15 @@
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="mb-3">
         <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@email.com" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@email.com" value="prueba@email.com" required>
       </div>
       <div class="mb-3">
         <label for="dni" class="form-label">DNI</label>
-        <input type="text" class="form-control" id="dni" name="dni" required placeholder="00000000A">
+        <input type="text" class="form-control" id="dni" name="dni" required placeholder="00000000A" value="12345678">
       </div>
       <div class="mb-3">
         <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+        <input type="date" class="form-control" id="birthdate" name="birthdate" required value="01/01/2000">
     </div>
     <button type="submit" class="btn w-100" id="btnIngresar">Ingresar</button>
   </form>
