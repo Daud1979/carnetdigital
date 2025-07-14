@@ -1,4 +1,8 @@
 <%- include('partials/header') %>
+<% const carnet = carnets[0]; %>
+<% const fondo = carnet.Tipo === 'UNE' ? 'anversoUNE.png' : 'anversoNormal.png'; %>
+<% const fondo2 = carnet.Tipo === 'UNE' ? 'reversoUNE.png' : 'reversoNormal.png'; %>
+<% const titulo2 = carnet.Tipo === 'UNE' ? 'Homologación UNE 58451 ES153333-1' : ''; %>
 <h3>GESTION DE CARNET Y CERTIFICADOS DEL ALUMNO</h3>   
        <img src="/images/logo-originial.ico" alt="">    
       
@@ -20,38 +24,43 @@
     </div>
           <div id="carnet-container" class="carnet-wrapper">
             <div class="carnet-flip">
-              <div class="carnet-face carnet-front">
+              <div class="carnet-face carnet-front" id="fondocarnets" style="background-image: url('/images/<%= fondo %>');">
                 <div class="carnet-content">
                     <div class="titulo ">
-                       <h6>CARNET DE CARRETILLA</h6>
+                       <h6 id="titulos"><%=carnets[0].Titulo%></h6>
                     </div>
                     <div class="contenedorcarnet">
-                      <div class="contenedorimg">
-                        
-                        <img id="imgfoto" src="/images/daud.png" alt="">
+                      <div class="contenedorimg">                        
+                        <img id="imgfoto" src="<%= carnets[0].Imagen %>" alt="Foto carnet">
                         <label class="labeltitulo" >Nº Registro</label>
-                        <label class="labeltitulo" >123456</label>
+                        <label id="nregistros" class="labeltitulo"><%=carnets[0].N_Registroa%></label>
                       </div>
                       <div class="contenedordatos ">
                           <div class="contenidotexto "> 
                             <label class="labeltituloN" >Nombre</label>
+                            <label id="nombre" for=""><%= carnets[0].Nombre %></label>
                           </div>
                           <div class="contenidotexto ">
                             <label class="labeltituloN" >Apellidos</label>
+                             <label id="apellidos" for=""><%= carnets[0].Apellidos %></label>
                           </div>
                           <div class="contenidotexto ">
                             <label class="labeltituloN" >DNI</label>
+                             <label id="doc" for=""><%= carnets[0].TDocumento %></label>
                           </div>
                           <div class="contenidotexto "> <label class="labeltituloF" >Fecha expedición</label>&nbsp;&nbsp;<label class="labeltituloF" >Valido hasta*</label></div>
-                          <div class="contenidotexto "> <label class="labeltitulo" >05/05/2025</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label class="labeltitulo" >05/05/2025</label></div>
+                          <div class="contenidotexto ">   <label id="validos" for=""><%= carnets[0].Fecha_Valido %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label id="expiras" for=""><%= carnets[0].Expira %></div>
                       </div>
                     </div>
                 </div>
               </div>
-              <div class="carnet-face carnet-back">
-                <div class="carnet-content">
-       
+              <div id="fondocarnets2" class="carnet-face carnet-back "style="background-image: url('/images/<%= fondo2 %>');">
+                <div id="carnet-content2" class="carnet-content2">
+                    <% carnets.forEach(carnet => { %>      
+                      <label for=""> <%= carnet.Asignatura %></label>  
+                    <% }) %>
                 </div>
+                <label for="" id="titulo2"><%= titulo2 %></label>
               </div>
             </div>
           </div>
