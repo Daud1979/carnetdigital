@@ -29,7 +29,7 @@
       </div>
       <div class="mb-3">
         <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" class="form-control hide-calendar" id="birthdate" name="birthdate" required value="2000-03-26">
+        <input type="text" class="form-control" class="form-control hide-calendar"  placeholder="dd/mm/yyyy" id="birthdate" name="birthdate" required value="26/03/2000">
     </div>
     <button type="submit" class="btn w-100" id="btnIngresar">Ingresar</button>
     <% if (error) { %>
@@ -40,3 +40,7 @@
 </div>
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7/inputmask.min.js"></script>
+<script>
+  Inputmask("99/99/9999").mask(document.getElementById("birthdate"));
+</script>

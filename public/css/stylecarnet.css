@@ -115,7 +115,9 @@ img{
   display: block; /* Opcional: para que se alineen verticalmente */
   line-height: 1.1; /* Opcional: ajusta el espacio vertical entre líneas */
 }
-
+#volver{
+  display: block;
+}
 .contenedorcarnet{
   display: flex;
   padding-top: 20px;
