@@ -101,10 +101,11 @@ img{
 
 .carnet-content{
   all: 'unset';  
+    
 }
 .carnet-content2{
   all: 'unset';    
-  padding: 1.5rem;
+  padding: 1.6rem;
   margin: 2px;
   text-align: start;
 }
@@ -120,7 +121,8 @@ img{
 }
 .contenedorcarnet{
   display: flex;
-  padding-top: 20px;
+  height: 100%;
+  
 }
 .contenedorimg{
   width: 25%;
@@ -132,15 +134,15 @@ img{
   text-align: start;
   padding-left: 5px;
 }
-#imgfoto
-{
-  margin-top: 30px;
+#imgfoto{
+  margin-top: 26px;
   width: 80%;
   height: 70%;
   text-align: center;
   border-radius: 7px;
-
+  
 }
+
 label{
   padding: 0;
   margin: 0;
@@ -179,10 +181,25 @@ label{
   font-size: 0.8rem;  
  
 }
-
-
-
-
+.ver{
+  display: none;
+}
+.oculto{
+  display: block;
+}
+.clasefoto{
+   position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      font-family: sans-serif;
+      color: #eee;
+}
+.titulo{ 
+ height: 50px;
+ padding: 0;
+}
 
 
 

@@ -24,31 +24,31 @@
     </div>
           <div id="carnet-container" class="carnet-wrapper">
             <div class="carnet-flip">
-              <div class="carnet-face carnet-front" id="fondocarnets" style="background-image: url('/images/<%= fondo %>');">
-                <div class="carnet-content">
+              <div class="carnet-face carnet-front"  id="fondocarnets" style="background-image: url('/images/<%= fondo %>');">
+                <div class="carnet-content" >
                     <div class="titulo ">
                        <h6 id="titulos"><%=carnets[0].Titulo%></h6>
                     </div>
                     <div class="contenedorcarnet">
                       <div class="contenedorimg">                        
                         <img id="imgfoto" src="<%= carnets[0].Imagen %>" alt="Foto carnet">
-                        <label class="labeltitulo" >Nº Registro</label>
+                        <label class="labeltitulo" id="labeltitulo" >Nº Registro</label>
                         <label id="nregistros" class="labeltitulo"><%=carnets[0].N_Registroa%></label>
                       </div>
                       <div class="contenedordatos ">
                           <div class="contenidotexto "> 
-                            <label class="labeltituloN" >Nombre</label>
+                            <label class="labeltituloN" id="labelnombre" >Nombre</label>
                             <label id="nombre" for=""><%= carnets[0].Nombre %></label>
                           </div>
                           <div class="contenidotexto ">
-                            <label class="labeltituloN" >Apellidos</label>
+                            <label class="labeltituloN" id="labelapellidos" >Apellidos</label>
                              <label id="apellidos" for=""><%= carnets[0].Apellidos %></label>
                           </div>
                           <div class="contenidotexto ">
-                            <label class="labeltituloN" >DNI</label>
+                            <label class="labeltituloN" id="labeldni" >DNI</label>
                              <label id="doc" for=""><%= carnets[0].TDocumento %></label>
                           </div>
-                          <div class="contenidotexto "> <label class="labeltituloF" >Fecha expedición</label>&nbsp;&nbsp;<label class="labeltituloF" >Valido hasta*</label></div>
+                          <div class="contenidotexto "> <label class="labeltituloF" id="valido" >Fecha expedición</label>&nbsp;&nbsp;<label class="labeltituloF" id="expira" >Valido hasta*</label></div>
                           <div class="contenidotexto ">   <label id="validos" for=""><%= carnets[0].Fecha_Valido %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label id="expiras" for=""><%= carnets[0].Expira %></div>
                       </div>
                     </div>
