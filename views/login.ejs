@@ -42,5 +42,17 @@
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7/inputmask.min.js"></script>
 <script>
-  Inputmask("99/99/9999").mask(document.getElementById("birthdate"));
+  
+  document.getElementById('birthdate').addEventListener('input', function (e) {
+  let value = e.target.value.replace(/\D/g, ''); // Eliminar todo lo que no sea dígito
+
+  // Insertar las barras automáticamente
+  if (value.length > 2 && value.length <= 4) {
+    value = value.slice(0, 2) + '/' + value.slice(2);
+  } else if (value.length > 4) {
+    value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4, 8);
+  }
+
+  e.target.value = value;
+});
 </script>
