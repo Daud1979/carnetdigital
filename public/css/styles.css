@@ -20,7 +20,8 @@ body{
 }
 #btnIngresar:hover{
     color: #A60736;
-    background: #7e7d7d;
+    background: #d3d1d1;
+    border: solid 1px #A60736;
 }
 .imagen{
   

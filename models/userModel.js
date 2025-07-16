@@ -15,7 +15,7 @@ const getUserByCredentials = async (email, dni, birthdate) => {
 };
 const datoscarnet = async (idMatricula) => {
   try {
-    const result = await sql.query`select gru.numIdTipoGrupo,TDocumento=strNif,Nombre= strNombre,Apellidos=strApellidos,Fecha_Valido=convert(varchar(10),fecFechaMatricula,103),Expira=convert(varchar(10),dateadd(year,5,fecFechaMatricula),103),N_Registroa=ma.NumIdMatricula,Asignatura=asg.strNombreAsignatura,Titulo=tg.strDescripcion,Foto=strfoto,Tipo = CASE 
+    const result = await sql.query`select al.numIdAlumno, gru.numIdTipoGrupo,TDocumento=strNif,Nombre= strNombre,Apellidos=strApellidos,Fecha_Valido=convert(varchar(10),fecFechaMatricula,103),Expira=convert(varchar(10),dateadd(year,5,fecFechaMatricula),103),N_Registroa=ma.NumIdMatricula,Asignatura=asg.strNombreAsignatura,Titulo=tg.strDescripcion,Foto=strfoto,Tipo = CASE 
               WHEN tg.strDescripcion LIKE '%RD%' THEN 'RD'  WHEN tg.strDescripcion LIKE '%UNE%' THEN 'UNE'
               ELSE 'RD' 
            END
@@ -33,5 +33,16 @@ where (ma.numIdMatricula=${idMatricula}) and tg.numIdTipoGrupo in (2,3,7,8,9,10,
     return null;
   }
 };
-module.exports = { getUserByCredentials,datoscarnet };
+
+const datoscertificados = async (numIdAlumno) => {
+  try {
+    const result = await sql.query`select strAsunto from tareas where numIdAlumno= ${numIdAlumno} `;
+    return result.recordset;
+  } catch (error) {
+    console.error('Error al buscar certificado:', error);
+    return null;
+  }
+}
+
+module.exports = { getUserByCredentials,datoscarnet,datoscertificados };
 

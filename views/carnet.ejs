@@ -3,13 +3,18 @@
 <% const fondo = carnet.Tipo === 'UNE' ? 'anversoUNE.png' : 'anversoNormal.png'; %>
 <% const fondo2 = carnet.Tipo === 'UNE' ? 'reversoUNE.png' : 'reversoNormal.png'; %>
 <% const titulo2 = carnet.Tipo === 'UNE' ? 'Homologación UNE 58451 ES153333-1' : ''; %>
+<div class="cabeza">
 <h3>GESTION DE CARNET Y CERTIFICADOS DEL ALUMNO</h3>   
-       <img src="/images/logo-originial.ico" alt="">    
-      <a id="volver" href="https://icei-formacion.com/">IR A INICIO</a>
+<img src="/images/logo-originial.ico" alt="">    
+<div class="volver">
+  <a id="volver" href="https://icei-formacion.com/">Pagina Principal</a>
+</div>
+</div>
 <div class="tabs">
     <div class="tab active" onclick="mostrarTab('carnet')">Carnet</div>
     <div class="tab" onclick="mostrarTab('certificados')">Certificados</div>
 </div>
+
 <div class="tab-content">
   <div id="carnet" class="tab-pane active">     
     <div class="listaCarnet w-100">
@@ -17,7 +22,7 @@
       <ul>
         <% datos.forEach(item => { %>
         <li>
-            <a href="#" class="btnCarnet" data-id="<%= item.id %>"><%= item.nombre %></a>
+            <a href="#" class="btnCarnet" data-id="<%= item.id %>"><%= item.nombre %></a>           
         </li>
         <% }) %>
       </ul>          
@@ -67,17 +72,23 @@
     </div>
 
     <div id="certificados" class="tab-pane">
-          <div class="listaCarnet w-100">
-      <h3>Mis Certificados</h3>
-      <ul>
-        <% datos.forEach(item => { %>
-        <li>
-            <a href="#" class="btnCertificado" data-id="<%= item.id %>"><%= item.nombre %></a>
-        </li>
-        <% }) %>
-      </ul>          
+      <div class="listaCarnet w-100">
+        <h3>Mis Certificados</h3>
+        <div class="listacertificado" >
+          <!--aqui los certificados-->
+          <% certificados.forEach(cert => { %>
+          <div class="certificado-item mb-4 p-3 bg-white rounded shadow-sm">
+            
+            <iframe src="https://docs.google.com/gview?embedded=true&url=<%= encodeURIComponent(cert.url) %>" width="100%" height="500px"  style="border: 1px solid #ccc; border-radius: 6px;">              </iframe>
+            <div class="mt-2 text-end">
+              <a href="<%= cert.url %>" class="btn btn-sm btn-outline-primary" download>    Descargar         </a>
+            </div>
+          </div>
+          <% }) %>
+          <!---->
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
+</div>
 
 <%- include('partials/footer') %>

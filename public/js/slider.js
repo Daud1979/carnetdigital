@@ -95,7 +95,7 @@ carnetFlip.addEventListener('click', () => {
       if (certificado) {
         e.preventDefault();
         const id = certificado.dataset.id;       
-     
+        console.log(id);
       }
     });
   });

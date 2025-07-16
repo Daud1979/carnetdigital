@@ -7,6 +7,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.1692.0",
     "bootstrap": "^5.3.0",
     "csurf": "^1.11.0",
     "dotenv": "^17.2.0",

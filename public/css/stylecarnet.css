@@ -3,11 +3,16 @@
     padding: 0;
 }
 body{
-  background: #eeeded; 
+  background: #fcfbfb; 
   justify-content: center; /* Horizontal */
   align-items: center;     /* Vertical */
   text-align: center;
   padding: 0.3rem;
+}
+h3{
+  padding: 0.5rem;
+  color:white;
+  text-shadow: 1px 2px 2px black;  
 }
 .carnet-wrapper {
   width: 390px;
@@ -34,13 +39,19 @@ body{
   height: 100%;
   backface-visibility: hidden;
   border-radius: 8px;
-  background: #d6d6d6;
+  background: #A60736; 
   box-sizing: border-box;
   padding: 5px;
   display: flex;
   flex-direction: column;  
   color: #222;
   border: 1px solid #999;
+}
+.cabeza{
+  background: #A60736; 
+  padding-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0.2rem;
 }
 .carnet-front {
   z-index: 2;
@@ -116,8 +127,21 @@ img{
   display: block; /* Opcional: para que se alineen verticalmente */
   line-height: 1.1; /* Opcional: ajusta el espacio vertical entre líneas */
 }
+.volver{
+  text-align: end;
+  padding-right: 1rem;
+}
 #volver{
-  display: block;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  color:black;
+  font-weight: bold; 
+  font-size: 1rem;
+  text-decoration: none;  
+  border: 1px solid black;
+  border-radius: 5px;
+    
 }
 .contenedorcarnet{
   display: flex;
@@ -201,10 +225,49 @@ label{
  padding: 0;
 }
 
-
-
+.btnCarnet, .btnCertificado {
+  background: #c9c8c8;
+  color: rgb(10, 10, 10);  
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+li{
+  list-style-type: none;  
+  margin-bottom: 1rem;
+  }
 /* Responsive para móvil */
+.listaCarnet {
+  padding: 20px;
+  overflow-x: hidden;
+}
 
+.listacertificado {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.certificado-item {
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.certificado-item iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+  display: block;
+  border: none;
+  border-radius: 6px;
+}
 
 
 
