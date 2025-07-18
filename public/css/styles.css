@@ -19,9 +19,10 @@ body{
     color: white;
 }
 #btnIngresar:hover{
-    color: #A60736;
-    background: #d3d1d1;
+    color: #080808;
+    background: #e4386c;
     border: solid 1px #A60736;
+    
 }
 .imagen{
   
