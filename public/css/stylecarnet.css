@@ -99,7 +99,7 @@ img{
       border-radius: 5px 5px 0 0;
 }
 .tab.active {
-      background-color: #A60736; 
+      background-color: #db3869; 
       color: white;
       border-bottom: 1px solid white;
       font-weight: semibold;
@@ -233,7 +233,7 @@ label{
  padding: 0;
 }
 
-.btnCarnet, .btnCertificado {
+.btnCarnet {
   background: #dddddd;
   color: rgb(10, 10, 10);  
   padding: 0.4rem 0.8rem;
@@ -250,10 +250,13 @@ label{
   color: white;
   transform: translateY(-2px);
 }
-
+ul{
+  margin: 0;
+  padding: 0;
+}
 li{
   list-style-type: none;  
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   }
 /* Responsive para móvil */
 .listaCarnet {
